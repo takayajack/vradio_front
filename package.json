@@ -1,0 +1,23 @@
+{
+  "name": "vradio_front",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt --port 3001",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "export": "nuxt export",
+    "serve": "nuxt serve"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.11.0",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "node-sass": "^4.14.1",
+    "nuxt": "^2.13.0",
+    "nuxt-buefy": "^0.3.31",
+    "sass-loader": "^9.0.2",
+    "vuex-persistedstate": "^3.0.1"
+  },
+  "devDependencies": {}
+}
