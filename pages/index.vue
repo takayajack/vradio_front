@@ -1,53 +1,43 @@
 <template>
   <section class="section">
-    <div class="columns is-mobile">
-      <card
-        title="Free"
-        icon="github"
-      >
-        Open source on <a href="https://github.com/buefy/buefy">
-          GitHub
-        </a>
-      </card>
-
-      <card
-        title="Responsive"
-        icon="cellphone-link"
-      >
-        <b class="has-text-grey">
-          Every
-        </b> component is responsive
-      </card>
-
-      <card
-        title="Modern"
-        icon="alert-decagram"
-      >
-        Built with <a href="https://vuejs.org/">
-          Vue.js
-        </a> and <a href="http://bulma.io/">
-          Bulma
-        </a>
-      </card>
-
-      <card
-        title="Lightweight"
-        icon="arrange-bring-to-front"
-      >
-        No other internal dependency
-      </card>
-    </div>
+    <section class="columns is-multiline">
+      <div class="column is-4 is-offset-4">
+         <b-field>
+            <b-input placeholder="Search..."
+                type="search"
+                icon="magnify"
+                icon-clickable
+                @icon-click="searchVtuber">
+            </b-input>
+            <p class="control">
+                <b-button class="button is-primary" @click="searchVtuber" >Search</b-button>
+            </p>
+        </b-field>
+      </div>
+      <div class="column is-12">
+          <Vtubercard></Vtubercard>
+      </div>
+    </section>
   </section>
 </template>
 
 <script>
 import Card from '~/components/Card'
+import Vtubercard from '~/components/Vtubercard'
 
 export default {
   name: 'HomePage',
 
   components: {
-    Card
-  }
+    Card,
+    Vtubercard,
+  },
+
+  methods: {
+    searchVtuber:function(){
+
+    }
+  },
+
 }
 </script>
