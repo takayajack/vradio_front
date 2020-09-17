@@ -1,6 +1,6 @@
 <template>
 <transition mode="out-in" name="bounce">
-<div class="card column is-2 is-12-tablet-only" v-if="isSearching()">
+<div class="card column is-2 is-12-tablet-only" v-if="isSearching()" @click="execParentEvent()">
   <div class="card-image">
     <figure class="image is-1by1">
       <img :src="image" alt="Placeholder image">
@@ -50,6 +50,9 @@ export default {
       } else if (this.searchName != this.name) {
         return false
       }
+    },
+    execParentEvent() {
+      this.$emit('click')
     }
   }
   // props: ['name', ]

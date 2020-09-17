@@ -20,13 +20,15 @@
       </div>
       <div class="column is-12">
         <div class="columns is-multiline card-deck" style="column-gap: 1.5rem;">
+          <!-- '/vtuber/'+ vtuber.id -->
             <Vtubercard v-for="vtuber in vtubers"
               :search-name="searchWord"
               :key="vtuber.name"
               :name="vtuber.name" 
               :twitter="vtuber.twitter" 
               :image="vtuber.image"
-              :zokusei="vtuber.zokusei">
+              :zokusei="vtuber.zokusei"
+              @click="$router.push(`/vtuber/${ vtuber.id }`)">
             </Vtubercard>
         </div>
       </div>
@@ -45,9 +47,9 @@ export default {
     return {
       searchWord: '',
       vtubers: [
-        { name: '月ノ美兎', twitter: '@Tsukinomito', image: 'https://s3-ap-northeast-1.amazonaws.com/liver-icons/400x400/Tsukino_Mito.png' },
-        { name: '本間ひまわり', twitter: '@honmahimawari', image: 'https://s3-ap-northeast-1.amazonaws.com/liver-icons/400x400/Honma_Himawari.png' },
-        { name: '百鬼あやめ', twitter: '@nakiriayame', image: 'https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/1369026/808112_469591.png'
+        { id: 1, name: '月ノ美兎', twitter: '@Tsukinomito', image: 'https://s3-ap-northeast-1.amazonaws.com/liver-icons/400x400/Tsukino_Mito.png' },
+        { id: 2, name: '本間ひまわり', twitter: '@honmahimawari', image: 'https://s3-ap-northeast-1.amazonaws.com/liver-icons/400x400/Honma_Himawari.png' },
+        { id: 3, name: '百鬼あやめ', twitter: '@nakiriayame', image: 'https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1000,w_500,f_auto,q_auto/1369026/808112_469591.png'
         , zokusei: ['HoloLive', 'かわ余'] },
       ]
     }
@@ -60,7 +62,7 @@ export default {
 
   methods: {
     searchVtuber:function(){
-
+      
     }
   },
 
